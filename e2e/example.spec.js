@@ -1,6 +1,11 @@
 // @ts-check
 import { test, expect } from '@playwright/test';
 
+test('@sanity Example test', async ({ page }) => {
+  await page.goto('https://todomvc.com/examples/react/dist/');
+  await expect(page).toHaveTitle(/TodoMVC/);
+});
+
 test('has title', async ({ page }) => {
   await page.goto('https://playwright.dev/');
 
